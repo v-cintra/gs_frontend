@@ -1,1 +1,1 @@
-https://github.com/squad-orbitguard/orbitguard-landing
+https://github.com/v-cintra/gs_frontend.git
