@@ -1,0 +1,379 @@
+/* =========================================================
+   OrbitGuard · Landing Page
+   Front-End Design · FIAP GS 2026 · Indústria Espacial
+   Reset → Variáveis → Layout → Componentes → Responsivo
+   ========================================================= */
+
+/* ---------- 1. Reset CSS mínimo ---------- */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;cursor:pointer;border:none;background:none}
+
+/* ---------- 2. Variáveis ---------- */
+:root{
+  --navy:#0B1A30;
+  --navy-2:#11243F;
+  --gold:#E8B84B;
+  --gold-soft:#FFF0C0;
+  --cream:#FBF8EE;
+  --ink:#16263F;
+  --mute:#6B7A92;
+  --line:#E5E1D3;
+  --white:#FFFFFF;
+
+  --font-sans:'Inter Tight',system-ui,-apple-system,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+
+  --maxw:1200px;
+  --pad-x:32px;
+  --pad-section:120px 32px;
+  --radius:14px;
+  --shadow:0 12px 40px rgba(11,26,48,.10);
+  --shadow-sm:0 2px 8px rgba(11,26,48,.06);
+}
+
+body{
+  font-family:var(--font-sans);
+  color:var(--ink);
+  background:var(--cream);
+}
+
+/* ---------- 3. Cabeçalho / Menu ---------- */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(11,26,48,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(232,184,75,.2);
+}
+.nav{
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px var(--pad-x);
+}
+.logo{
+  display:flex;align-items:center;gap:12px;
+  color:var(--white);font-family:var(--font-mono);
+  letter-spacing:.16em;text-transform:uppercase;font-size:14px;font-weight:500;
+}
+.logo .ring{
+  width:34px;height:34px;border:2px solid var(--gold);border-radius:50%;
+  display:grid;place-items:center;color:var(--gold);font-weight:700;font-size:14px;
+}
+.logo span{color:var(--gold)}
+
+.menu{
+  display:flex;gap:6px;align-items:center;
+}
+.menu a{
+  color:#cbd5e8;font-size:14px;font-family:var(--font-mono);
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:8px 14px;border-radius:8px;
+  transition:color .2s,background .2s;
+}
+.menu a:hover{color:var(--gold);background:rgba(232,184,75,.08)}
+.menu a.active{color:var(--gold);background:rgba(232,184,75,.12)}
+
+.menu-toggle{display:none;color:var(--white);font-size:24px;cursor:pointer;place-items:center;width:40px;height:40px;border-radius:8px}
+.menu-toggle:hover{background:rgba(232,184,75,.1)}
+
+/* ---------- 4. Hero ---------- */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  background:
+    radial-gradient(1200px 600px at 80% 20%, rgba(232,184,75,.10), transparent 60%),
+    radial-gradient(900px 500px at 10% 90%, rgba(80,120,200,.10), transparent 60%),
+    var(--navy);
+  color:var(--white);
+  padding:140px var(--pad-x) 80px;
+  position:relative;overflow:hidden;
+}
+.hero-inner{
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;align-items:center;gap:64px;width:100%;
+}
+.hero-text{flex:1;max-width:640px}
+.hero-eyebrow{
+  font-family:var(--font-mono);font-size:14px;letter-spacing:.18em;
+  color:var(--gold);text-transform:uppercase;margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(48px,7vw,84px);
+  font-weight:700;line-height:.95;letter-spacing:-.025em;
+  margin-bottom:24px;
+}
+.hero h1 em{font-style:normal;color:var(--gold);font-weight:500}
+.hero p.lede{
+  font-size:18px;color:#cbd5e8;max-width:52ch;margin-bottom:36px;
+}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 26px;border-radius:10px;
+  font-family:var(--font-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:600;transition:transform .2s,background .2s,color .2s;
+}
+.btn-primary{background:var(--gold);color:var(--navy)}
+.btn-primary:hover{transform:translateY(-2px);background:#f3c66a}
+.btn-ghost{border:1.5px solid rgba(232,184,75,.4);color:var(--white)}
+.btn-ghost:hover{background:rgba(232,184,75,.1);color:var(--gold)}
+
+.hero-art{
+  flex:1;display:flex;justify-content:center;align-items:center;position:relative;
+  min-height:420px;max-width:520px;
+}
+.hero-art img{width:100%;height:auto;max-width:480px;display:block}
+
+/* ---------- 5. Seção genérica ---------- */
+.section{
+  padding:var(--pad-section);
+  scroll-margin-top:80px;
+}
+.section.alt{background:var(--white)}
+.section-inner{
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;flex-direction:column;
+}
+.section-eyebrow{
+  font-family:var(--font-mono);font-size:13px;letter-spacing:.18em;
+  color:var(--gold);text-transform:uppercase;
+  display:flex;align-items:center;gap:14px;margin-bottom:14px;
+}
+.section-eyebrow::before{
+  content:"";width:36px;height:2px;background:var(--gold);
+}
+.section h2{
+  font-size:clamp(36px,4.5vw,56px);
+  font-weight:700;line-height:1.05;letter-spacing:-.02em;
+  margin-bottom:18px;color:var(--navy);max-width:22ch;
+}
+.section p.intro{
+  font-size:18px;color:var(--mute);max-width:60ch;margin-bottom:48px;
+}
+
+/* ---------- 6. Cards / grids ---------- */
+.cards{
+  display:flex;flex-wrap:wrap;gap:24px;
+}
+.card{
+  flex:1 1 280px;
+  background:var(--cream);
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px 28px;
+  display:flex;flex-direction:column;gap:14px;
+  transition:transform .2s,box-shadow .2s,border-color .2s;
+}
+.section.alt .card{background:var(--cream)}
+.card:hover{
+  transform:translateY(-3px);box-shadow:var(--shadow);
+  border-color:var(--gold);
+}
+.card .ico{
+  width:48px;height:48px;border-radius:12px;
+  background:var(--navy);color:var(--gold);
+  display:grid;place-items:center;font-family:var(--font-mono);font-weight:700;font-size:18px;
+}
+.card h3{font-size:20px;font-weight:600;color:var(--navy);letter-spacing:-.005em}
+.card p{font-size:15px;color:var(--ink);line-height:1.5}
+.card.dark{background:var(--navy);border-color:var(--navy)}
+.card.dark h3{color:var(--white)}
+.card.dark p{color:#cbd5e8}
+.card.dark .ico{background:var(--gold);color:var(--navy)}
+
+/* ---------- 7. Problema · split com ilustração ---------- */
+.split{
+  display:flex;gap:60px;align-items:center;flex-wrap:wrap;
+}
+.split-text{flex:1 1 380px}
+.split-art{
+  flex:1 1 380px;
+  display:flex;justify-content:center;
+}
+.split-art .placeholder{
+  width:100%;max-width:420px;aspect-ratio:5/4;border-radius:var(--radius);
+  background:
+    repeating-linear-gradient(45deg,
+      var(--gold-soft) 0 12px,
+      var(--cream) 12px 24px);
+  border:1px solid var(--line);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  font-family:var(--font-mono);color:var(--navy);text-align:center;padding:24px;
+}
+.split-art .placeholder .lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+.split-art .placeholder .title{font-size:16px;font-weight:700;letter-spacing:.04em}
+.fire-illo{
+  margin:0;width:100%;max-width:480px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.fire-illo svg,
+.fire-illo img{
+  width:100%;height:auto;display:block;
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--cream);
+  box-shadow:0 12px 36px rgba(11,26,48,.10);
+}
+.fire-illo figcaption{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;
+  color:var(--mute);line-height:1.55;padding:0 4px;text-align:left;
+}
+
+/* ---------- 8. Tecnologia · grid horizontal ---------- */
+.tech-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+}
+.tech-tile{
+  background:var(--white);border:1px solid var(--line);border-radius:12px;
+  padding:24px;display:flex;flex-direction:column;gap:8px;
+  transition:border-color .2s, transform .2s;
+}
+.tech-tile:hover{border-color:var(--gold);transform:translateY(-2px)}
+.tech-tile .cat{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;
+  color:var(--gold);text-transform:uppercase;
+}
+.tech-tile .items{font-size:15px;color:var(--navy);font-weight:500;line-height:1.4}
+
+/* ---------- 9. Objetivos · lista numerada ---------- */
+.goals{display:flex;flex-direction:column;gap:18px}
+.goal{
+  display:flex;gap:24px;align-items:flex-start;
+  padding:24px 0;border-top:1px solid var(--line);
+}
+.goal:first-child{border-top:none;padding-top:0}
+.goal .num{
+  font-family:var(--font-mono);font-size:14px;font-weight:700;
+  color:var(--gold);letter-spacing:.1em;flex-shrink:0;min-width:48px;
+}
+.goal .body h3{font-size:22px;font-weight:600;color:var(--navy);margin-bottom:6px}
+.goal .body p{font-size:15.5px;color:var(--ink);line-height:1.55}
+
+/* ---------- 10. Público · avatares + papéis ---------- */
+.audience{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.aud-card{
+  background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px 28px;display:flex;flex-direction:column;gap:12px;
+}
+.aud-card .av{
+  width:72px;height:72px;border-radius:50%;background:var(--navy);
+  display:grid;place-items:center;color:var(--gold);font-weight:700;font-size:28px;
+  font-family:var(--font-mono);margin-bottom:6px;
+}
+.aud-card h3{font-size:20px;font-weight:600;color:var(--navy)}
+.aud-card .role{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase}
+.aud-card p{font-size:14.5px;color:var(--ink);line-height:1.5}
+
+/* ---------- 11. Benefícios ---------- */
+.benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.benefit{
+  display:flex;gap:16px;align-items:flex-start;
+  background:var(--white);border:1px solid var(--line);border-radius:12px;padding:24px;
+}
+.benefit .ck{
+  width:36px;height:36px;border-radius:50%;background:var(--gold);
+  display:grid;place-items:center;color:var(--navy);font-weight:700;flex-shrink:0;
+}
+.benefit h3{font-size:17px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.benefit p{font-size:14.5px;color:var(--ink);line-height:1.5}
+
+/* ---------- 12. Aplicação · timeline ---------- */
+.timeline{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+}
+.step{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 20px;display:flex;flex-direction:column;gap:10px;
+  position:relative;
+}
+.step .when{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;
+  color:var(--gold);text-transform:uppercase;
+}
+.step h3{font-size:16px;font-weight:600;color:var(--navy);line-height:1.2}
+.step p{font-size:13.5px;color:var(--ink);line-height:1.5}
+.step::after{
+  content:"→";position:absolute;right:-15px;top:50%;transform:translateY(-50%);
+  color:var(--gold);font-size:18px;font-weight:700;z-index:2;
+}
+.step:last-child::after{display:none}
+
+/* ---------- 13. Rodapé ---------- */
+.footer{
+  background:var(--navy);color:#cbd5e8;
+  padding:60px var(--pad-x) 30px;
+}
+.footer-inner{
+  max-width:var(--maxw);margin:0 auto;
+  display:flex;flex-direction:column;gap:36px;
+}
+.footer-top{
+  display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;
+}
+.footer-brand{max-width:360px}
+.footer-brand h4{
+  font-family:var(--font-mono);color:var(--gold);font-size:14px;
+  letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px;font-weight:500;
+}
+.footer-brand p{font-size:14px;line-height:1.5}
+.footer-cols{
+  display:flex;gap:60px;flex-wrap:wrap;
+}
+.footer-col h5{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;
+  color:var(--gold);text-transform:uppercase;margin-bottom:14px;font-weight:500;
+}
+.footer-col ul{display:flex;flex-direction:column;gap:8px}
+.footer-col a{font-size:14px;color:#cbd5e8;transition:color .2s}
+.footer-col a:hover{color:var(--gold)}
+
+.footer-team{
+  padding-top:0;
+}
+.footer-team h5{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;
+  color:var(--gold);text-transform:uppercase;margin-bottom:12px;font-weight:500;
+}
+.team-list{
+  display:flex;flex-wrap:wrap;gap:14px 28px;font-size:14px;
+}
+.team-list span{font-family:var(--font-mono);color:#cbd5e8}
+.team-list span b{color:var(--gold);font-weight:500;margin-right:4px}
+
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-top:18px;border-top:1px solid rgba(232,184,75,.15);
+  font-family:var(--font-mono);font-size:12px;color:#8a99b3;letter-spacing:.06em;
+  flex-wrap:wrap;gap:12px;
+}
+
+/* ---------- 14. Responsivo ---------- */
+@media (max-width:900px){
+  .menu{
+    position:fixed;top:71px;left:0;right:0;
+    background:var(--navy);flex-direction:column;align-items:stretch;
+    padding:16px;gap:4px;
+    transform:translateY(-150%);transition:transform .3s;
+    border-bottom:1px solid rgba(232,184,75,.2);
+  }
+  .menu-checkbox:checked ~ .menu{transform:translateY(0)}
+  .menu a{padding:14px 16px;text-align:left}
+  .menu-toggle{display:grid}
+
+  .hero-inner{flex-direction:column;text-align:left}
+  .hero-art{order:-1;max-width:360px}
+
+  .tech-grid{grid-template-columns:repeat(2,1fr)}
+  .audience{grid-template-columns:1fr}
+  .benefits{grid-template-columns:1fr}
+  .split{flex-direction:column}
+  .timeline{grid-template-columns:repeat(2,1fr)}
+  .step::after{display:none}
+
+  :root{--pad-section:80px 24px}
+  .section h2{max-width:none}
+}

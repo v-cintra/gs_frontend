@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>OrbitGuard · Detecção precoce de queimadas via satélite + IoT</title>
+<meta name="description" content="Plataforma que une dados satelitais abertos com sensores IoT de borda para detectar focos de queimada em menos de 90 segundos." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ====================== HEADER / MENU ====================== -->
+<header class="header">
+  <nav class="nav">
+    <a href="#home" class="logo" aria-label="OrbitGuard início">
+      <span class="ring">★</span>
+      Orbit<span>Guard</span>
+    </a>
+
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox" hidden />
+    <ul class="menu" id="menu">
+      <li><a href="#problema">Problema</a></li>
+      <li><a href="#tecnologia">Tecnologia</a></li>
+      <li><a href="#objetivos">Objetivos</a></li>
+      <li><a href="#publico">Público</a></li>
+      <li><a href="#beneficios">Benefícios</a></li>
+      <li><a href="#aplicacao">Aplicação</a></li>
+    </ul>
+
+    <label for="menu-toggle" class="menu-toggle" aria-label="Abrir menu">☰</label>
+  </nav>
+</header>
+
+<!-- ====================== HERO ====================== -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">FIAP · Global Solution 2026 · Indústria Espacial</div>
+      <h1>Da ignição ao despacho em <em>90 segundos</em>.</h1>
+      <p class="lede">Plataforma que une dados satelitais abertos com sensores IoT de borda para detectar focos de queimada antes que virem incêndio.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#problema">Conhecer a solução</a>
+        <a class="btn btn-ghost" href="#aplicacao">Ver aplicação</a>
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <!-- Ilustração SVG: satélite, sensor em terra, conexão -->
+      <img src="imagens/hero-satelite.svg" alt="Ilustração de satélite em órbita conectado a uma estação de borda no solo da Terra" />
+    </div>
+  </div>
+</section>
+
+<!-- ====================== SEÇÃO 1 · PROBLEMA ====================== -->
+<section class="section" id="problema">
+  <div class="section-inner">
+    <div class="section-eyebrow">Seção 01 · Problema</div>
+    <h2>Queimadas no Brasil crescem mais rápido do que o sistema de resposta.</h2>
+    <p class="intro">Em 2024 foram 237 mil focos. A latência entre detecção orbital e despacho da brigada chega a quatro horas.</p>
+
+    <div class="split">
+      <div class="split-text">
+        <div class="goals">
+          <div class="goal">
+            <span class="num">01</span>
+            <div class="body">
+              <h3>Latência de alerta</h3>
+              <p>Dado satelital chega à brigada com 2 a 4 horas de atraso. Foco já virou incêndio incontrolável.</p>
+            </div>
+          </div>
+          <div class="goal">
+            <span class="num">02</span>
+            <div class="body">
+              <h3>Áreas remotas sem cobertura</h3>
+              <p>Regiões sem 4G ficam fora dos painéis institucionais. Brigada só sabe quando a fumaça aparece.</p>
+            </div>
+          </div>
+          <div class="goal">
+            <span class="num">03</span>
+            <div class="body">
+              <h3>Custo alto de adoção</h3>
+              <p>Soluções comerciais cobram até R$ 200 mil ao ano por município. Inviável para cidades pequenas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="split-art">
+        <figure class="fire-illo" role="img" aria-label="Ilustração da propagação concêntrica de um foco de queimada ao longo de quatro horas sem detecção orbital">
+          <img src="imagens/propagacao-foco.svg" alt="Ilustração da propagação concêntrica de um foco de queimada ao longo de quatro horas sem detecção orbital" />
+          <figcaption>Crescimento exponencial de um foco de queimada sem confirmação local: a área dobra a cada 23 minutos enquanto o satélite só revisita a região 1× a cada 95 min.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== SEÇÃO 2 · TECNOLOGIA ====================== -->
+<section class="section alt" id="tecnologia">
+  <div class="section-inner">
+    <div class="section-eyebrow">Seção 02 · Tecnologia</div>
+    <h2>Stack aberta, madura e auditável.</h2>
+    <p class="intro">Tecnologias escolhidas pelo custo zero de licença e maturidade comprovada em produção.</p>
+
+    <div class="tech-grid">
+      <div class="tech-tile"><span class="cat">Front-end</span><span class="items">HTML · CSS · JavaScript</span></div>
+      <div class="tech-tile"><span class="cat">Backend</span><span class="items">Python · FastAPI · PostgreSQL</span></div>
+      <div class="tech-tile"><span class="cat">Embarcado</span><span class="items">ESP32 · DHT22 · MQ-2</span></div>
+      <div class="tech-tile"><span class="cat">Mensageria</span><span class="items">MQTT · WebSocket</span></div>
+      <div class="tech-tile"><span class="cat">Dados orbitais</span><span class="items">NASA FIRMS · INPE · Sentinel-2</span></div>
+      <div class="tech-tile"><span class="cat">Mapas</span><span class="items">Leaflet · OpenStreetMap</span></div>
+      <div class="tech-tile"><span class="cat">Modelagem</span><span class="items">NumPy · Matplotlib</span></div>
+      <div class="tech-tile"><span class="cat">Infra</span><span class="items">Docker · GitHub Actions</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== SEÇÃO 3 · OBJETIVOS ====================== -->
+<section class="section" id="objetivos">
+  <div class="section-inner">
+    <div class="section-eyebrow">Seção 03 · Objetivos</div>
+    <h2>Quatro metas mensuráveis para a primeira fase do produto.</h2>
+    <p class="intro">Cada objetivo tem KPI claro e é a base de aceitação do MVP em piloto.</p>
+
+    <div class="cards">
+      <article class="card">
+        <span class="ico">01</span>
+        <h3>Alerta em menos de 90 s</h3>
+        <p>Reduzir o tempo médio entre ignição e despacho da brigada para um décimo do atual.</p>
+      </article>
+      <article class="card">
+        <span class="ico">02</span>
+        <h3>Falsos positivos &lt; 8%</h3>
+        <p>Cruzar dado satelital com sensor de campo para descartar alarmes sem fogo confirmado.</p>
+      </article>
+      <article class="card">
+        <span class="ico">03</span>
+        <h3>Custo de R$ 12 mil/ano</h3>
+        <p>Adoção viável para municípios pequenos, incluindo 10 estações de borda em campo.</p>
+      </article>
+      <article class="card dark">
+        <span class="ico">04</span>
+        <h3>50 municípios em 18 meses</h3>
+        <p>Distribuição prioritária em cidades do Cerrado e Pantanal de alta vulnerabilidade.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== SEÇÃO 4 · PÚBLICO-ALVO ====================== -->
+<section class="section alt" id="publico">
+  <div class="section-inner">
+    <div class="section-eyebrow">Seção 04 · Público-alvo</div>
+    <h2>Quem usa o OrbitGuard no dia a dia.</h2>
+    <p class="intro">Três perfis com necessidades complementares — operação, coordenação e governança.</p>
+
+    <div class="audience">
+      <article class="aud-card">
+        <div class="av">B</div>
+        <span class="role">Operação</span>
+        <h3>Brigadistas de campo</h3>
+        <p>Recebem alerta com mapa e rota no celular. Confirmam chegada e fecham ocorrência.</p>
+      </article>
+      <article class="aud-card">
+        <div class="av">C</div>
+        <span class="role">Coordenação</span>
+        <h3>Defesa Civil municipal</h3>
+        <p>Acompanham mapa unificado de focos ativos. Priorizam despachos por gravidade e proximidade.</p>
+      </article>
+      <article class="aud-card">
+        <div class="av">G</div>
+        <span class="role">Governança</span>
+        <h3>Gestores ambientais</h3>
+        <p>Exportam relatórios de ocorrência para fiscalização ambiental e prestação de contas.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== SEÇÃO 5 · BENEFÍCIOS ====================== -->
+<section class="section" id="beneficios">
+  <div class="section-inner">
+    <div class="section-eyebrow">Seção 05 · Benefícios</div>
+    <h2>O que o município ganha ao adotar o OrbitGuard.</h2>
+    <p class="intro">Benefícios diretos para operação, orçamento e prestação de contas socioambiental.</p>
+
+    <div class="benefits">
+      <div class="benefit"><span class="ck">✓</span><div><h3>Resposta 95% mais rápida</h3><p>Brigada chega antes do foco virar incêndio descontrolado.</p></div></div>
+      <div class="benefit"><span class="ck">✓</span><div><h3>Cobertura mesmo sem 4G</h3><p>Sensores de borda funcionam em áreas sem infraestrutura de telefonia.</p></div></div>
+      <div class="benefit"><span class="ck">✓</span><div><h3>Custo 10× menor</h3><p>Alternativa acessível para municípios pequenos e médios.</p></div></div>
+      <div class="benefit"><span class="ck">✓</span><div><h3>Trilha auditável</h3><p>Histórico de eventos imutável para fiscalização ambiental.</p></div></div>
+      <div class="benefit"><span class="ck">✓</span><div><h3>Código aberto</h3><p>Hardware e software com referência pública — sem aprisionamento de fornecedor.</p></div></div>
+      <div class="benefit"><span class="ck">✓</span><div><h3>Integração com ODS</h3><p>Aderente aos Objetivos 9, 11, 13 e 15 da Agenda 2030 da ONU.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== SEÇÃO 6 · APLICAÇÃO ====================== -->
+<section class="section alt" id="aplicacao">
+  <div class="section-inner">
+    <div class="section-eyebrow">Seção 06 · Aplicação no dia a dia</div>
+    <h2>Como a solução funciona, do céu ao bombeiro, em quatro passos.</h2>
+    <p class="intro">Caminho que um foco percorre na plataforma — do satélite ao despacho da equipe em campo.</p>
+
+    <div class="timeline">
+      <div class="step">
+        <span class="when">T + 0s</span>
+        <h3>Detecção orbital</h3>
+        <p>Satélite identifica anomalia térmica e dispara webhook na plataforma OrbitGuard.</p>
+      </div>
+      <div class="step">
+        <span class="when">T + 15s</span>
+        <h3>Confirmação local</h3>
+        <p>Estação IoT confirma fumaça e temperatura no mesmo ponto. Score sobe acima de 70.</p>
+      </div>
+      <div class="step">
+        <span class="when">T + 45s</span>
+        <h3>Despacho automático</h3>
+        <p>Brigada mais próxima recebe push com mapa e rota. Coordenação acompanha em painel.</p>
+      </div>
+      <div class="step">
+        <span class="when">T + 90s</span>
+        <h3>Brigada a caminho</h3>
+        <p>Equipe registra deslocamento no app. Audit log preserva toda a cadeia de eventos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== RODAPÉ ====================== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-team">
+      <h5>Equipe Prime Next</h5>
+      <div class="team-list">
+        <span><b>Vitor</b> RM 569416</span>
+        <span><b>Octavio</b> RM 571838</span>
+        <span><b>Pedro</b> RM 573187</span>
+        <span><b>Douglas</b> RM 569713</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
